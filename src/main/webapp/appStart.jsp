@@ -1,56 +1,61 @@
-<%--
-  GameAppクラス作成後、下記の記述が必要です。
-  <%@ page import="app.GameApp"%>
- --%>
+<%@ page import="app.GameApp"%>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
-<%
+        <%
     request.setCharacterEncoding("UTF-8");
     String name = request.getParameter("name");
 
     String result = "未実施";
-
+	
+    app.GameApp i = new GameApp("何か");
+    		
     if (name != null && !name.isEmpty()) {
+    	result = i.start(name);
     	// このif分の中で、GameAppクラスのstartメソッドを呼び出し、
     	// 戻り値をresultに代入してください。
     }
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Java応用_演習問題1</title>
-<style>
-body {
-  border: solid 2px #000080;
-  padding: 5px;
-}
+            <!DOCTYPE html>
+            <html>
 
-.result {
-  background: #fffacd;
-  display: inline-block;
-  margin: 5px;
-  padding: 10px;
-}
-</style>
-</head>
-<body>
+            <head>
+                <meta charset="UTF-8">
+                <title>Java応用_演習問題1</title>
+                <style>
+                    body {
+                        border: solid 2px #000080;
+                        padding: 5px;
+                    }
+                    
+                    .result {
+                        background: #fffacd;
+                        display: inline-block;
+                        margin: 5px;
+                        padding: 10px;
+                    }
+                </style>
+            </head>
 
-  <h1>Java応用 - 演習問題1</h1>
+            <body>
 
-  <h2>ゲームアプリ実行ページ</h2>
+                <h1>Java応用 - 演習問題1</h1>
 
-  <div class="result">
-    <h3>アプリの実行結果</h3>
-    <p><%=result%></p>
-  </div>
+                <h2>ゲームアプリ実行ページ</h2>
 
-  <form action="appStart.jsp" method="post">
-    <label>ユーザ名：</label>
-    <input type="text" name="name">
-    <br>
-    <button type="submit">実行</button>
-  </form>
-</body>
-</html>
+                <div class="result">
+                    <h3>アプリの実行結果</h3>
+                    <p>
+                        <%=result%>
+                    </p>
+                </div>
+
+                <form action="appStart.jsp" method="post">
+                    <label>ユーザ名：</label>
+                    <input type="text" name="name">
+                    <br>
+                    <button type="submit">実行</button>
+                </form>
+            </body>
+
+            </html>
