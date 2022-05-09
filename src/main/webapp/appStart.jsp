@@ -1,27 +1,14 @@
-<%@ page import="app.GameApp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+  pageEncoding="UTF-8"
+  %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-    <%@ page language="java" contentType="text/html; charset=UTF-8"
-  pageEncoding="UTF-8"%>
-        <%
-    request.setCharacterEncoding("UTF-8");
-    String name = request.getParameter("name");
-
-    String result = "未実施";
-	
-    app.GameApp i = new GameApp("何か");
-    		
-    if (name != null && !name.isEmpty()) {
-    	result = i.start(name);
-    	// このif分の中で、GameAppクラスのstartメソッドを呼び出し、
-    	// 戻り値をresultに代入してください。
-    }
-%>
             <!DOCTYPE html>
             <html>
 
             <head>
                 <meta charset="UTF-8">
-                <title>Java応用_演習問題1</title>
+                <title>Java応用_演習問題7</title>
                 <style>
                     body {
                         border: solid 2px #000080;
@@ -39,18 +26,19 @@
 
             <body>
 
-                <h1>Java応用 - 演習問題1</h1>
+                <h1>Java応用 - 演習問題7</h1>
 
                 <h2>ゲームアプリ実行ページ</h2>
+				<c:if test="${not empty name}">
+	                <div class="result">
+    	                <h3>アプリの実行結果</h3>
+        	            <p>
+            	            ${requestScope.name}
+                	    </p>
+               		 </div>
 
-                <div class="result">
-                    <h3>アプリの実行結果</h3>
-                    <p>
-                        <%=result%>
-                    </p>
-                </div>
-
-                <form action="appStart.jsp" method="post">
+				</c:if>
+                <form action="StartAppServlet" method="post">
                     <label>ユーザ名：</label>
                     <input type="text" name="name">
                     <br>
