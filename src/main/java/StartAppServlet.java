@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import app.GameApp;
 /**
  * Servlet implementation class StartAppServlet
  */
@@ -31,7 +32,9 @@ public class StartAppServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		System.out.println(name);
 		if(!(name == "")) {
-		request.setAttribute("name", name + "さんとなにかでゲームを始めます。");
+			app.GameApp i = new GameApp("何か");
+			String result = i.start(name);
+			request.setAttribute("name", result);
 		}
 		request.getRequestDispatcher("/appStart.jsp").forward(request, response);
 	}
