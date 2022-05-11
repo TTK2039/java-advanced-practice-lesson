@@ -43,7 +43,9 @@
                 <input type="text" name="name">
                 <br>
                 <input type="radio" name="app" value="cards" checked>トランプ
-                <input type="radio" name="app" value="game">ゲーム
+                <input type="radio" name="app" value="darts">ダーツ
+                <input type="radio" name="app" value="clock">時計
+                <input type="radio" name="app" value="other">その他
                 <br>
                 <button type="submit">実行</button>
             </form>

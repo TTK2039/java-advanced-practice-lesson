@@ -11,11 +11,15 @@ public class CardGameApp extends GameApp {
 	}
 	
 	@Override
-	public String start(String name) {
-		String start;
-		start = (name + "さんと" + item + "でゲームを開始します。ババ抜きを行います。" );
-		return start;
-		
+	public String play() {
+		return "ババ抜きを行います。";
 	}
+	
+//	public String start(String name) {
+//		String start;
+//		start = (name + "さんと" + item + "でゲームを開始します。ババ抜きを行います。" );
+//		return start;
+//		
+//	}
 
 }
