@@ -1,3 +1,4 @@
+package jp.co.axiz.servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -6,9 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import app.CardGameApp;
-import app.ClockApp;
-import app.DartsGameApp;
+import jp.co.axiz.app.App;
+import jp.co.axiz.app.CardGameApp;
+import jp.co.axiz.app.ClockApp;
+import jp.co.axiz.app.DartsGameApp;
+import jp.co.axiz.app.GameApp;
 /**
  * Servlet implementation class StartAppServlet
  */
@@ -49,7 +52,7 @@ public class StartAppServlet extends HttpServlet {
         
         String result = "";
         
-        app.App a = null;
+        App a = null;
                 
         if(!(name.equals(""))) {
         	if(app.equals("other")) {
@@ -58,6 +61,7 @@ public class StartAppServlet extends HttpServlet {
         		switch (app) {
         		case ("cards"):
         			a = new CardGameApp("トランプ");
+        		
         		break;
         		case ("darts"):
         			a = new DartsGameApp("ダーツ");
@@ -68,6 +72,11 @@ public class StartAppServlet extends HttpServlet {
         		}
         		result = a.start(name);
         	}
+        }
+        
+        if (a instanceof GameApp) {
+        	request.setAttribute("time", "実行時間：" + ((GameApp) a).getTime() + "分");
+        	
         }
 
 			
