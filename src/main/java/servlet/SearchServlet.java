@@ -30,7 +30,16 @@ public class SearchServlet extends HttpServlet {
             throws ServletException, IOException {
     	
     	// ここに必要な処理を記述してください。
-
+    	String eng = request.getParameter("english");
+    	Dictionary fruit = new Dictionary();
+    	
+    	if(!(eng == null || eng.isEmpty())) {
+    		if(fruit.getDictionaryInfo().containsKey(eng)) {
+    			request.setAttribute("result", fruit.getDictionaryInfo().get(eng));
+    		} else {
+    			request.setAttribute("result", "見つかりませんでした");
+    		}
+    	}
         request.getRequestDispatcher("dictionary.jsp").forward(request, response);
     }
 

@@ -34,7 +34,6 @@ body {
 
   <div>
     <h2>単語検索</h2>
-
     <form action="SearchServlet" method="get">
       <label>英語：</label>
       <input type="text" name="english">
