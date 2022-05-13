@@ -1,5 +1,4 @@
 package jp.co.axiz.util;
-
 import jp.co.axiz.app.App;
 import jp.co.axiz.app.CardGameApp;
 import jp.co.axiz.app.ClockApp;

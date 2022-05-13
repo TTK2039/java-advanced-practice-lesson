@@ -11,7 +11,7 @@ import jp.co.axiz.app.DartsGameApp;
 import jp.co.axiz.util.AppUtil;
 
 public class AppUtilTest {
-	
+	//Appオブジェクト
 	App obj = null;
 	
 	@Test
