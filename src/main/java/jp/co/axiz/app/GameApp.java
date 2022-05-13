@@ -1,5 +1,8 @@
 package jp.co.axiz.app;
 
+/**
+ * ゲームの抽象クラス
+ */
 public abstract class GameApp implements App {
 	
 	//item

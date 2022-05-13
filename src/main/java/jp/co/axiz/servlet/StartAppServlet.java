@@ -62,15 +62,15 @@ public class StartAppServlet extends HttpServlet {
         		case ("cards"):
         			a = new CardGameApp("トランプ");
         		
-        		break;
+        			break;
         		case ("darts"):
         			a = new DartsGameApp("ダーツ");
-        		break;
+        			break;
         		case ("clock"):
         			a = new ClockApp();
         			break;
         		}
-        		result = a.start(name);
+        	result = a.start(name);
         	}
         }
         

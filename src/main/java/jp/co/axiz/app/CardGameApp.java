@@ -1,5 +1,9 @@
 package jp.co.axiz.app;
 
+
+/**
+ * カードゲームアプリを表すクラス
+ */
 public class CardGameApp extends GameApp {
 	
 	public CardGameApp () {

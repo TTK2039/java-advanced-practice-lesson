@@ -1,5 +1,8 @@
 package jp.co.axiz.app;
 
+/**
+ * ダーツゲームアプリを表すクラス
+ */
 public class DartsGameApp extends GameApp {
 	public DartsGameApp() {
 		
